@@ -20,4 +20,316 @@ platform :ios do
   lane :custom_lane do
     # add actions here: https://docs.fastlane.tools/actions
   end
+  
+  
+  
+  # Development
+    desc "Lint code"
+    lane :lint_code do
+      puts("Lint code using SwfitLint")
+      swiftlint(
+        mode: :lint,
+        executable: "./Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+        config_file: './FintechBomb/.swiftlint.yml',
+        raise_if_swiftlint_error: true)
+    end
+    
+    
+    desc "Lint and format code"
+      lane :format_code do
+        puts("Lint and format code using SwfitLint")
+        swiftlint(
+          mode: :autocorrect,
+          executable: "./Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+          config_file: './FintechBomb/.swiftlint.yml',
+          raise_if_swiftlint_error: true)
+      end
+      
+      desc "Sort Xcode project files"
+      lane :sort_files do
+        puts("Sort the files for the Xcode project")
+        sh "../scripts/sort-Xcode-project-file.pl ../FintechBomb/FintechBomb.xcodeproj"
+      end
+      
+      desc "Prepare for a pull request"
+      lane :prepare_pr do
+        format_code
+        sort_files
+      end
+      
+      desc "Build development app"
+      lane :build_dev_app do
+        puts("Build development app")
+        gym(scheme: "FintechBomb",
+          workspace: "FintechBomb.xcworkspace",
+          export_method: "development",
+          configuration: "Debug",
+          xcargs: "-allowProvisioningUpdates")
+      end
+      
+      # Test
+      desc "Run unit tests"
+      lane :tests do
+        puts("Run the tests")
+        scan(
+          scheme: "FintechBomb", 
+          workspace: "FintechBomb.xcworkspace",
+          output_directory: "./fastlane/dist", 
+          output_types: "html", 
+          buildlog_path: "./fastlane/dist")
+      end
+      
+      # Profile
+      desc "Download certificates and profiles"
+      lane :download_profiles do
+        keychain_name = "TemporaryKeychain"
+        keychain_password = "TemporaryKeychainPassword"
+        
+        create_keychain(
+          name: keychain_name,
+          password: keychain_password,
+          default_keychain: false,
+          timeout: 3600,
+          unlock: true,
+        )
+
+        match(
+          type: "adhoc",
+          readonly: true,
+          keychain_name: keychain_name,
+          keychain_password: keychain_password,
+          storage_mode: "git",
+          git_url: "git@github.com:diaojz/FintechBomb.git",
+          app_identifier: "com.fantaike.fintechbomb.uat",
+          team_id: "H4VX6CT2V4"
+        )
+
+        match(
+          type: "appstore",
+          readonly: true,
+          keychain_name: keychain_name,
+          keychain_password: keychain_password,
+          storage_mode: "git",
+          git_url: "git@github.com:diaojz/FintechBomb.git",
+          app_identifier: "com.fantaike.fintechbomb",
+          team_id: "H4VX6CT2V4"
+        )
+      end
+      
+      desc "Create all new provisioning profiles managed by fastlane match"
+      lane :create_new_profiles do
+        api_key = get_app_store_connect_api_key
+        keychain_name = "TemporaryKeychain"
+        keychain_password = "TemporaryKeychainPassword"
+        
+        create_keychain(
+          name: keychain_name,
+          password: keychain_password,
+          default_keychain: false,
+          timeout: 3600,
+          unlock: true,
+        )
+
+        match(
+          type: "adhoc",
+          keychain_name: keychain_name,
+          keychain_password: keychain_password,
+          storage_mode: "git",
+          git_url: "git@github.com:diaojz/FintechBomb.git",
+          app_identifier: "com.fantaike.fintechbomb.uat",
+          team_id: "H4VX6CT2V4",
+          api_key: api_key
+        )
+
+        match(
+          type: "appstore",
+          keychain_name: keychain_name,
+          keychain_password: keychain_password,
+          storage_mode: "git",
+          git_url: "git@github.com:diaojz/FintechBomb.git",
+          app_identifier: "com.fantaike.fintechbomb",
+          team_id: "H4VX6CT2V4",
+          api_key: api_key
+        )
+      end
+      
+      desc "Nuke all provisioning profiles managed by fastlane match"
+      lane :nuke_profiles do
+        api_key = get_app_store_connect_api_key
+        keychain_name = "TemporaryKeychain"
+        keychain_password = "TemporaryKeychainPassword"
+        
+        create_keychain(
+          name: keychain_name,
+          password: keychain_password,
+          default_keychain: false,
+          timeout: 3600,
+          unlock: true,
+        )
+
+        match_nuke(
+          type: "adhoc",
+          keychain_name: keychain_name,
+          keychain_password: keychain_password,
+          storage_mode: "git",
+          git_url: "git@github.com:diaojz/FintechBomb.git",
+          app_identifier: "com.fantaike.fintechbomb.uat",
+          team_id: "H4VX6CT2V4",
+          api_key: api_key
+        )
+
+        match_nuke(
+          type: "appstore",
+          keychain_name: keychain_name,
+          keychain_password: keychain_password,
+          storage_mode: "git",
+          git_url: "git@github.com:diaojz/FintechBomb.git",
+          app_identifier: "com.fantaike.fintechbomb",
+          team_id: "H4VX6CT2V4",
+          api_key: api_key
+        )
+      end
+      
+      desc "Add a new device to provisioning profile"
+      lane :add_device do |options|
+        name = options[:name]
+        udid = options[:udid]
+        
+        # Add to App Store Connect
+        api_key = get_app_store_connect_api_key
+        register_device(
+          name: name,
+          udid: udid,
+          team_id: "H4VX6CT2V4",
+          api_key: api_key
+        )
+
+        # Update the profiles to Git private repo
+        match(
+          type: "adhoc",
+          force: true,
+          storage_mode: "git",
+          git_url: "git@github.com:diaojz/FintechBomb.git",
+          app_identifier: "com.fantaike.fintechbomb.uat",
+          team_id: "H4VX6CT2V4",
+          api_key: api_key
+        )
+      end
+      
+      # Archive
+      desc 'Creates an archive of the uat app for testing'
+      lane :archive_uat do
+        unlock_keychain(
+          path: "TemporaryKeychain-db",
+          password: "TemporaryKeychainPassword")
+
+        update_code_signing_settings(
+          use_automatic_signing: false,
+          path: "FintechBomb/FintechBomb.xcodeproj",
+          code_sign_identity: "iPhone Distribution",
+          bundle_identifier: "com.fantaike.fintechbomb.uat",
+          profile_name: "match AdHoc com.fantaike.fintechbomb.uat")
+
+        puts("Create an archive for uat testing")
+        gym(scheme: "FintechBomb-uat",
+          workspace: "FintechBomb.xcworkspace",
+          export_method: "ad-hoc",
+          xcargs: "-allowProvisioningUpdates")
+
+        update_code_signing_settings(
+          use_automatic_signing: true,
+          path: "FintechBomb/FintechBomb.xcodeproj")
+
+        puts("If you run this lane on your local machine, should not commit the changes for your project file to Git")
+      end
+      
+      desc 'Creates an archive of the Production app with Appstore distribution'
+      lane :archive_appstore do
+        unlock_keychain(
+          path: "TemporaryKeychain-db",
+          password: "TemporaryKeychainPassword")
+
+        update_code_signing_settings(
+          use_automatic_signing: false,
+          path: "FintechBomb/FintechBomb.xcodeproj",
+          code_sign_identity: "iPhone Distribution",
+          bundle_identifier: "com.fantaike.fintechbomb",
+          profile_name: "match AppStore com.fantaike.fintechbomb")
+
+        puts("Create an archive for AppStore submission")
+        gym(scheme: "FintechBomb-AppStore",
+          workspace: "FintechBomb.xcworkspace",
+          export_method: "app-store",
+          xcargs: "-allowProvisioningUpdates")
+
+        update_code_signing_settings(
+          use_automatic_signing: true,
+          path: "FintechBomb/FintechBomb.xcodeproj")
+
+        puts("If you run this lane on your local machine, should not commit the changes for your project file to Git")
+      end
+      
+      # Crash report symbols
+      desc 'Upload symbols to Crashlytics for uat app'
+      lane :upload_symbols_to_crashlytics_uat do
+        upload_symbols_to_crashlytics(
+          dsym_path: "./FintechBomb.app.dSYM.zip",
+          gsp_path: "./FintechBomb/FintechBomb/Configurations/Firebase/GoogleService-Info-uat.plist",
+          api_token: ENV["FIREBASE_API_TOKEN"]
+        )
+      end
+      
+      desc 'Upload symbols to Crashlytics for Production app'
+      lane :upload_symbols_to_crashlytics_appstore do
+        upload_symbols_to_crashlytics(
+          dsym_path: "./FintechBomb.app.dSYM.zip",
+          gsp_path: "./FintechBomb/FintechBomb/Configurations/Firebase/GoogleService-Info-AppStore.plist",
+          api_token: ENV["FIREBASE_API_TOKEN"]
+        )
+      end
+      
+      # Deploy
+      desc 'Deploy the uat app to Firebase Distribution'
+      lane :deploy_uat do
+        firebase_app_distribution(
+            app: "1:19259693084:ios:7be2135e039f0b558aa7d9",
+            ipa_path: "FintechBomb.ipa",
+            groups: "uat-testers",
+            release_notes: "A new build for the uat App", # Can customize it using Git history.
+            firebase_cli_token: ENV["FIREBASE_API_TOKEN"]
+        )
+      end
+      
+      desc 'Deploy the Production app to TestFlight and App Store'
+      lane :deploy_appstore do
+        api_key = get_app_store_connect_api_key
+        upload_to_app_store(
+          api_key: api_key,
+          app_identifier: "com.fantaike.fintechbomb",
+          skip_metadata: true,
+          skip_screenshots: true,
+          precheck_include_in_app_purchases: false,
+        )
+      end
+      
+      desc 'Get App Store Connect API key'
+      private_lane :get_app_store_connect_api_key do
+        # The key needs to have App Manager role, see https://github.com/fastlane/fastlane/issues/17066
+    #   key_content = ENV["APP_STORE_CONNECT_API_CONTENT"]   Make sure setting this environment variable before call this lane.
+    key_content = "MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgsUmM4ifToQE72utZ
+    uHs5JnVy8EwCyWuSH/EJzZWRVTagCgYIKoZIzj0DAQehRANCAAQn07TUqPWMsbOc
+    rkSeVgqq6RxrJRBaHkHN67nGICPZcLWklV4xHMHp3Q0A5wl7Andccf7ioGQKMQrM
+    NB5TdLVO" # Make sure setting this environment variable before call this lane.
+        api_key = app_store_connect_api_key(
+          key_id: "37RJN4Z35W",
+          issuer_id: "f633e3ee-bbcb-44e3-a9d8-086c12a8da1b",
+          key_content: "-----BEGIN EC PRIVATE KEY-----\n" + key_content + "\n-----END EC PRIVATE KEY-----",
+          duration: 1200,
+          in_house: false
+        )
+
+        api_key 
+      end
+    
+    
 end
