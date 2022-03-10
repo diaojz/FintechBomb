@@ -1,0 +1,15 @@
+//
+//  CompilerAndLanguageConfig.xcconfig
+//  FintechBomb
+//
+//  Created by 刁爷 on 2022/3/10.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// 编译器和语言版本选择
+CLANG_ENABLE_MODULES = YES
+SWIFT_VERSION = 5.5
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
+

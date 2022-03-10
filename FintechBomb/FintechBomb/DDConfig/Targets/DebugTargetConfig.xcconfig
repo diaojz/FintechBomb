@@ -1,0 +1,15 @@
+//
+//  DebugTargetConfig.xcconfig
+//  FintechBomb
+//
+//  Created by 刁爷 on 2022/3/10.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "../Pods/Target Support Files/Pods-FintechBomb/Pods-FintechBomb.debug.xcconfig"
+#include "BaseTargetConfig.xcconfig"
+
+PRODUCT_BUNDLE_NAME = $(inherited) sit
+PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.debug

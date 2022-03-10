@@ -1,0 +1,26 @@
+//
+//  BaseConfig.xcconfig
+//  FintechBomb
+//
+//  Created by 刁爷 on 2022/3/10.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+//当我们使用 xcconfig 时，Xcode 构建系统会按照下面的优先级来计算出 Build Setting 的最后生效值：
+//
+//Platform Defaults (平台默认值)
+//
+//Xcode Project xcconfig File（Project 级别的 xcconfig 文件）
+//
+//Xcode Project File Build Settings（Project 级别的手工配置的 Build Setting）
+//
+//Target xcconfig File （Target 级别的 xcconfig 文件）
+//
+//Target Build Settings（Target 级别的手工配置的 Build Setting）
+//
+//Xcode 构建系统会按照上述列表从上而下读取 Build Setting，如果发现同样的 Setting ，就会把下面的 Setting 覆盖掉上面的，越往下优先级别越高。
+
+/// 定义baseURL
+API_BASE_URL = momentsapi.herokuapp.com

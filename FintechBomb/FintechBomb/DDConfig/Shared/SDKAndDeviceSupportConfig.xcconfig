@@ -1,0 +1,22 @@
+//
+//  SDKAndDeviceSupportConfig.xcconfig
+//  FintechBomb
+//
+//  Created by 刁爷 on 2022/3/10.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// 支持的设备类型
+//1    iPhone
+//2    iPad
+//3    Apple TV
+//4    Apple Watch
+//5    Apple HomePod
+//6    Mac
+// 比如一个支持 iPhone、iPad、TV、Watch 和 macOS 的工具库
+// TARGETED_DEVICE_FAMILY = 1,2,3,4,6
+TARGETED_DEVICE_FAMILY = 1
+// 支持的最低版本
+IPHONEOS_DEPLOYMENT_TARGET = 13.0
