@@ -17,4 +17,4 @@ GITHUB_API_TOKEN=<GitHub API token for accessing the private repo for certificat
 MATCH_PASSWORD=<Password for certificates for App signing on GitHub private repo>
 ```
 
-And run `$ source local.keys` After that, you can follow the steps in [.travis.yml](https://github.com/lagoueduCol/iOS-linyongjian/blob/main/.travis.yml) to run the automations locally
+## 运行一下脚本 source ./scripts/export_env.sh 把keys中的变量写入到 export里
