@@ -39,7 +39,7 @@ def ui_pods
 end
 
 def internal_pods
-#  pod 'DesignKit', :path => './Frameworks/DesignKit', :inhibit_warnings => false
+  pod 'DesignKit', :path => './Frameworks/DesignKit', :inhibit_warnings => false
 #  pod 'DDKit', :path => './Frameworks/DDKit', :inhibit_warnings => false
 end
 
