@@ -124,7 +124,8 @@ only_rules:
   - yoda_condition
 
 included:
-  - "../Frameworks/DesignKit"
+# - "../Frameworks/DesignKit"
+  - "../FintechBomb/"
 
 excluded:
   - Pods
