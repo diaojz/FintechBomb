@@ -8,7 +8,6 @@
 import XCTest
 
 class FintechBombUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
