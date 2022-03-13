@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5F75E0ECD8E771E650565615 /* Pods_FintechBomb_FintechBombUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC31B7AB74AB5606D8623E92 /* Pods_FintechBomb_FintechBombUITests.framework */; };
+		8C5310FD27DDC85F005F8C44 /* DDPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5310FC27DDC85F005F8C44 /* DDPerson.m */; };
+		8C53110127DDC90C005F8C44 /* DDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110027DDC90C005F8C44 /* DDTestViewController.m */; };
 		8C64E6A647975E33B53705F2 /* Pods_FintechBomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F464140630ED2B6F8730D4F5 /* Pods_FintechBomb.framework */; };
 		8C74D81827DB44AC0033BF04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74D81727DB44AC0033BF04 /* AppDelegate.swift */; };
 		8C74D81A27DB44AC0033BF04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74D81927DB44AC0033BF04 /* SceneDelegate.swift */; };
@@ -53,6 +55,11 @@
 		1907EF4529D95A2F967B3A0B /* Pods-FintechBomb.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FintechBomb.appstore.xcconfig"; path = "Target Support Files/Pods-FintechBomb/Pods-FintechBomb.appstore.xcconfig"; sourceTree = "<group>"; };
 		22DAE740E6687F98BCA83EBC /* Pods-FintechBombTests.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FintechBombTests.uat.xcconfig"; path = "Target Support Files/Pods-FintechBombTests/Pods-FintechBombTests.uat.xcconfig"; sourceTree = "<group>"; };
 		727731C790AE21E9A9E81F72 /* Pods_FintechBombTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FintechBombTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C5310FA27DDC85F005F8C44 /* FintechBomb-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FintechBomb-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C5310FB27DDC85F005F8C44 /* DDPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDPerson.h; sourceTree = "<group>"; };
+		8C5310FC27DDC85F005F8C44 /* DDPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDPerson.m; sourceTree = "<group>"; };
+		8C5310FF27DDC90C005F8C44 /* DDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDTestViewController.h; sourceTree = "<group>"; };
+		8C53110027DDC90C005F8C44 /* DDTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDTestViewController.m; sourceTree = "<group>"; };
 		8C74D81427DB44AC0033BF04 /* FintechBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FintechBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C74D81727DB44AC0033BF04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C74D81927DB44AC0033BF04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +123,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C5310F927DDC829005F8C44 /* DDInterview */ = {
+			isa = PBXGroup;
+			children = (
+				8C5310FA27DDC85F005F8C44 /* FintechBomb-Bridging-Header.h */,
+				8C5310FF27DDC90C005F8C44 /* DDTestViewController.h */,
+				8C53110027DDC90C005F8C44 /* DDTestViewController.m */,
+				8C5310FE27DDC86D005F8C44 /* runtime */,
+			);
+			path = DDInterview;
+			sourceTree = "<group>";
+		};
+		8C5310FE27DDC86D005F8C44 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				8C5310FB27DDC85F005F8C44 /* DDPerson.h */,
+				8C5310FC27DDC85F005F8C44 /* DDPerson.m */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
 		8C74D80B27DB44AC0033BF04 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +168,7 @@
 		8C74D81627DB44AC0033BF04 /* FintechBomb */ = {
 			isa = PBXGroup;
 			children = (
+				8C5310F927DDC829005F8C44 /* DDInterview */,
 				8C74D84727DB45D40033BF04 /* DDConfig */,
 				8C74D81727DB44AC0033BF04 /* AppDelegate.swift */,
 				8C74D82027DB44AC0033BF04 /* Assets.xcassets */,
@@ -315,6 +343,7 @@
 				TargetAttributes = {
 					8C74D81327DB44AC0033BF04 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 					8C74D82927DB44AD0033BF04 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -545,6 +574,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5310FD27DDC85F005F8C44 /* DDPerson.m in Sources */,
+				8C53110127DDC90C005F8C44 /* DDTestViewController.m in Sources */,
 				8C74D81827DB44AC0033BF04 /* AppDelegate.swift in Sources */,
 				8C74D81A27DB44AC0033BF04 /* SceneDelegate.swift in Sources */,
 				8C74D81C27DB44AC0033BF04 /* ViewController.swift in Sources */,
@@ -725,7 +756,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -740,9 +773,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FintechBomb/DDInterview/FintechBomb-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -754,7 +790,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -769,9 +807,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FintechBomb/DDInterview/FintechBomb-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -783,14 +823,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb.FintechBombTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -804,14 +846,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb.FintechBombTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -824,13 +868,15 @@
 			baseConfigurationReference = CD7972A38057C20971E697C1 /* Pods-FintechBomb-FintechBombUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb.FintechBombUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -843,13 +889,15 @@
 			baseConfigurationReference = DF8A081AA1C5452CFF14CD41 /* Pods-FintechBomb-FintechBombUITests.uat.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb.FintechBombUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -918,7 +966,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -933,9 +983,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FintechBomb/DDInterview/FintechBomb-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -947,14 +999,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb.FintechBombTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -967,13 +1021,15 @@
 			baseConfigurationReference = E6147BBAC9E27544EE94A03E /* Pods-FintechBomb-FintechBombUITests.appstore.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4VX6CT2V4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb.FintechBombUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.fantaike.fintechbomb.uat";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
