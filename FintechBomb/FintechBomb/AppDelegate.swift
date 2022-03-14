@@ -28,3 +28,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
+
+extension UIWindow {
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        let toggleDataStore: ToggleDataStoreType = BuildTargetToggleDataStore.shared
+        if toggleDataStore.isToggleOn(BuildTargetToggle.debug) ||
+            toggleDataStore.isToggleOn(BuildTargetToggle.uat) {
+            if motion == .motionShake { // 摇晃手机
+                let testVC = DDTestViewController()
+//                navigationController?.pushViewController(testVC, animated: true)
+                print("进入debug页面..")
+            }
+        }
+    }
+}
