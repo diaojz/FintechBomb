@@ -10,6 +10,9 @@
 		5F75E0ECD8E771E650565615 /* Pods_FintechBomb_FintechBombUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC31B7AB74AB5606D8623E92 /* Pods_FintechBomb_FintechBombUITests.framework */; };
 		8C5310FD27DDC85F005F8C44 /* DDPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5310FC27DDC85F005F8C44 /* DDPerson.m */; };
 		8C53110127DDC90C005F8C44 /* DDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110027DDC90C005F8C44 /* DDTestViewController.m */; };
+		8C53110527DE3E9F005F8C44 /* DDToggleDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110427DE3E9F005F8C44 /* DDToggleDataStoreType.swift */; };
+		8C53110727DE52A3005F8C44 /* BuildTargetToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110627DE52A3005F8C44 /* BuildTargetToggle.swift */; };
+		8C53110927DE5479005F8C44 /* DDLocalToggleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110827DE5479005F8C44 /* DDLocalToggleDataStore.swift */; };
 		8C64E6A647975E33B53705F2 /* Pods_FintechBomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F464140630ED2B6F8730D4F5 /* Pods_FintechBomb.framework */; };
 		8C74D81827DB44AC0033BF04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74D81727DB44AC0033BF04 /* AppDelegate.swift */; };
 		8C74D81A27DB44AC0033BF04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74D81927DB44AC0033BF04 /* SceneDelegate.swift */; };
@@ -60,6 +63,9 @@
 		8C5310FC27DDC85F005F8C44 /* DDPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDPerson.m; sourceTree = "<group>"; };
 		8C5310FF27DDC90C005F8C44 /* DDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDTestViewController.h; sourceTree = "<group>"; };
 		8C53110027DDC90C005F8C44 /* DDTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDTestViewController.m; sourceTree = "<group>"; };
+		8C53110427DE3E9F005F8C44 /* DDToggleDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDToggleDataStoreType.swift; sourceTree = "<group>"; };
+		8C53110627DE52A3005F8C44 /* BuildTargetToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTargetToggle.swift; sourceTree = "<group>"; };
+		8C53110827DE5479005F8C44 /* DDLocalToggleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLocalToggleDataStore.swift; sourceTree = "<group>"; };
 		8C74D81427DB44AC0033BF04 /* FintechBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FintechBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C74D81727DB44AC0033BF04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C74D81927DB44AC0033BF04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +149,24 @@
 			path = runtime;
 			sourceTree = "<group>";
 		};
+		8C53110227DE3E2F005F8C44 /* DDFoudations */ = {
+			isa = PBXGroup;
+			children = (
+				8C53110327DE3E61005F8C44 /* DDToggle */,
+			);
+			path = DDFoudations;
+			sourceTree = "<group>";
+		};
+		8C53110327DE3E61005F8C44 /* DDToggle */ = {
+			isa = PBXGroup;
+			children = (
+				8C53110427DE3E9F005F8C44 /* DDToggleDataStoreType.swift */,
+				8C53110627DE52A3005F8C44 /* BuildTargetToggle.swift */,
+				8C53110827DE5479005F8C44 /* DDLocalToggleDataStore.swift */,
+			);
+			path = DDToggle;
+			sourceTree = "<group>";
+		};
 		8C74D80B27DB44AC0033BF04 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +192,7 @@
 		8C74D81627DB44AC0033BF04 /* FintechBomb */ = {
 			isa = PBXGroup;
 			children = (
+				8C53110227DE3E2F005F8C44 /* DDFoudations */,
 				8C5310F927DDC829005F8C44 /* DDInterview */,
 				8C74D84727DB45D40033BF04 /* DDConfig */,
 				8C74D81727DB44AC0033BF04 /* AppDelegate.swift */,
@@ -576,7 +601,10 @@
 			files = (
 				8C5310FD27DDC85F005F8C44 /* DDPerson.m in Sources */,
 				8C53110127DDC90C005F8C44 /* DDTestViewController.m in Sources */,
+				8C53110727DE52A3005F8C44 /* BuildTargetToggle.swift in Sources */,
+				8C53110927DE5479005F8C44 /* DDLocalToggleDataStore.swift in Sources */,
 				8C74D81827DB44AC0033BF04 /* AppDelegate.swift in Sources */,
+				8C53110527DE3E9F005F8C44 /* DDToggleDataStoreType.swift in Sources */,
 				8C74D81A27DB44AC0033BF04 /* SceneDelegate.swift in Sources */,
 				8C74D81C27DB44AC0033BF04 /* ViewController.swift in Sources */,
 			);
