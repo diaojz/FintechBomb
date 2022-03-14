@@ -39,7 +39,6 @@ extension UIWindow {
 //                navigationController?.pushViewController(testVC, animated: true)
                 print("进入debug页面..")
             }
-            
         }
     }
 }

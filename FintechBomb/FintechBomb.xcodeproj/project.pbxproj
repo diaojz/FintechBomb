@@ -13,6 +13,14 @@
 		8C53110527DE3E9F005F8C44 /* DDToggleDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110427DE3E9F005F8C44 /* DDToggleDataStoreType.swift */; };
 		8C53110727DE52A3005F8C44 /* BuildTargetToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110627DE52A3005F8C44 /* BuildTargetToggle.swift */; };
 		8C53110927DE5479005F8C44 /* DDLocalToggleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110827DE5479005F8C44 /* DDLocalToggleDataStore.swift */; };
+		8C53110C27DF6114005F8C44 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110B27DF6114005F8C44 /* Functions.swift */; };
+		8C53110E27DF616B005F8C44 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53110D27DF616B005F8C44 /* Configuration.swift */; };
+		8C53111127DF62CF005F8C44 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53111027DF62CF005F8C44 /* TransitionType.swift */; };
+		8C53111327DF631A005F8C44 /* UniversalLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53111227DF631A005F8C44 /* UniversalLinks.swift */; };
+		8C53111527DF6371005F8C44 /* Navigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53111427DF6371005F8C44 /* Navigating.swift */; };
+		8C53111727DF828B005F8C44 /* RoutingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53111627DF828B005F8C44 /* RoutingSource.swift */; };
+		8C53111927DF832F005F8C44 /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53111827DF832F005F8C44 /* AppRouting.swift */; };
+		8C53111B27DF83DB005F8C44 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53111A27DF83DB005F8C44 /* AppRouter.swift */; };
 		8C64E6A647975E33B53705F2 /* Pods_FintechBomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F464140630ED2B6F8730D4F5 /* Pods_FintechBomb.framework */; };
 		8C74D81827DB44AC0033BF04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74D81727DB44AC0033BF04 /* AppDelegate.swift */; };
 		8C74D81A27DB44AC0033BF04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74D81927DB44AC0033BF04 /* SceneDelegate.swift */; };
@@ -66,6 +74,14 @@
 		8C53110427DE3E9F005F8C44 /* DDToggleDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDToggleDataStoreType.swift; sourceTree = "<group>"; };
 		8C53110627DE52A3005F8C44 /* BuildTargetToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTargetToggle.swift; sourceTree = "<group>"; };
 		8C53110827DE5479005F8C44 /* DDLocalToggleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLocalToggleDataStore.swift; sourceTree = "<group>"; };
+		8C53110B27DF6114005F8C44 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		8C53110D27DF616B005F8C44 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		8C53111027DF62CF005F8C44 /* TransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionType.swift; sourceTree = "<group>"; };
+		8C53111227DF631A005F8C44 /* UniversalLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinks.swift; sourceTree = "<group>"; };
+		8C53111427DF6371005F8C44 /* Navigating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigating.swift; sourceTree = "<group>"; };
+		8C53111627DF828B005F8C44 /* RoutingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingSource.swift; sourceTree = "<group>"; };
+		8C53111827DF832F005F8C44 /* AppRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
+		8C53111A27DF83DB005F8C44 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		8C74D81427DB44AC0033BF04 /* FintechBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FintechBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C74D81727DB44AC0033BF04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C74D81927DB44AC0033BF04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +168,8 @@
 		8C53110227DE3E2F005F8C44 /* DDFoudations */ = {
 			isa = PBXGroup;
 			children = (
+				8C53110F27DF62A1005F8C44 /* DDRouting */,
+				8C53110A27DF60DE005F8C44 /* DDUtils */,
 				8C53110327DE3E61005F8C44 /* DDToggle */,
 			);
 			path = DDFoudations;
@@ -165,6 +183,28 @@
 				8C53110827DE5479005F8C44 /* DDLocalToggleDataStore.swift */,
 			);
 			path = DDToggle;
+			sourceTree = "<group>";
+		};
+		8C53110A27DF60DE005F8C44 /* DDUtils */ = {
+			isa = PBXGroup;
+			children = (
+				8C53110B27DF6114005F8C44 /* Functions.swift */,
+				8C53110D27DF616B005F8C44 /* Configuration.swift */,
+			);
+			path = DDUtils;
+			sourceTree = "<group>";
+		};
+		8C53110F27DF62A1005F8C44 /* DDRouting */ = {
+			isa = PBXGroup;
+			children = (
+				8C53111027DF62CF005F8C44 /* TransitionType.swift */,
+				8C53111227DF631A005F8C44 /* UniversalLinks.swift */,
+				8C53111427DF6371005F8C44 /* Navigating.swift */,
+				8C53111627DF828B005F8C44 /* RoutingSource.swift */,
+				8C53111827DF832F005F8C44 /* AppRouting.swift */,
+				8C53111A27DF83DB005F8C44 /* AppRouter.swift */,
+			);
+			path = DDRouting;
 			sourceTree = "<group>";
 		};
 		8C74D80B27DB44AC0033BF04 = {
@@ -600,13 +640,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C5310FD27DDC85F005F8C44 /* DDPerson.m in Sources */,
+				8C53111527DF6371005F8C44 /* Navigating.swift in Sources */,
+				8C53111927DF832F005F8C44 /* AppRouting.swift in Sources */,
 				8C53110127DDC90C005F8C44 /* DDTestViewController.m in Sources */,
+				8C53110C27DF6114005F8C44 /* Functions.swift in Sources */,
 				8C53110727DE52A3005F8C44 /* BuildTargetToggle.swift in Sources */,
 				8C53110927DE5479005F8C44 /* DDLocalToggleDataStore.swift in Sources */,
+				8C53111327DF631A005F8C44 /* UniversalLinks.swift in Sources */,
 				8C74D81827DB44AC0033BF04 /* AppDelegate.swift in Sources */,
+				8C53110E27DF616B005F8C44 /* Configuration.swift in Sources */,
 				8C53110527DE3E9F005F8C44 /* DDToggleDataStoreType.swift in Sources */,
+				8C53111127DF62CF005F8C44 /* TransitionType.swift in Sources */,
+				8C53111B27DF83DB005F8C44 /* AppRouter.swift in Sources */,
 				8C74D81A27DB44AC0033BF04 /* SceneDelegate.swift in Sources */,
 				8C74D81C27DB44AC0033BF04 /* ViewController.swift in Sources */,
+				8C53111727DF828B005F8C44 /* RoutingSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
