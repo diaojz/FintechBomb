@@ -2,6 +2,11 @@ PODS:
   - Alamofire (5.3.0)
   - DesignKit (1.0.0)
   - Differentiator (4.0.1)
+  - fintech_flutter (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
   - Kingfisher/Core (5.15.6)
@@ -28,6 +33,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 5.3.0)
   - DesignKit (from `./Frameworks/DesignKit`)
+  - fintech_flutter (from `fintech_flutter/.ios/Flutter`)
+  - Flutter (from `fintech_flutter/.ios/Flutter/engine`)
+  - FlutterPluginRegistrant (from `fintech_flutter/.ios/Flutter/FlutterPluginRegistrant`)
   - Kingfisher (= 5.15.6)
   - Nimble (= 9.0.0)
   - Quick (= 3.0.0)
@@ -61,11 +69,20 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   DesignKit:
     :path: "./Frameworks/DesignKit"
+  fintech_flutter:
+    :path: fintech_flutter/.ios/Flutter
+  Flutter:
+    :path: fintech_flutter/.ios/Flutter/engine
+  FlutterPluginRegistrant:
+    :path: fintech_flutter/.ios/Flutter/FlutterPluginRegistrant
 
 SPEC CHECKSUMS:
   Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   DesignKit: ad94b2d421cd94bdbb64b801ad0b9068592f77d2
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  fintech_flutter: 311b1432f74e4cdea8d2d33ce8ea5aad02220aa6
+  Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
+  FlutterPluginRegistrant: 2afd5ea46d3a949472c9b7da6462d8fbf7d8b16e
   Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
@@ -79,6 +96,6 @@ SPEC CHECKSUMS:
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: e26c72ff4876033b3441ac364012524118410b95
+PODFILE CHECKSUM: d492bc1ad791fc4dbaeeeaf7ca38153ddf90130e
 
 COCOAPODS: 1.10.0

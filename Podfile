@@ -12,6 +12,11 @@ use_frameworks!
 # ignore all warnings from all dependencies
 inhibit_all_warnings!
 
+# integration flutter
+flutter_application_path = './fintech_flutter'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+
 
 def dev_pods
   pod 'SwiftLint', '= 0.42.0', configurations: ['Debug']
@@ -53,6 +58,9 @@ end
 target 'FintechBomb' do
   # Comment the next line if you don't want to use dynamic frameworks
 #  use_frameworks!
+
+# flutter
+install_all_flutter_pods(flutter_application_path)
 
   # Pods for FintechBomb
   dev_pods

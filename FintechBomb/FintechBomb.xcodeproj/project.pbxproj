@@ -346,6 +346,7 @@
 			buildPhases = (
 				BBDFCFD2E5EB8C2CA81DDDA5 /* [CP] Check Pods Manifest.lock */,
 				8C74D86727DB96840033BF04 /* Run SwiftGen */,
+				64DEEDFC046E72A856C18DA2 /* [CP-User] Run Flutter Build fintech_flutter Script */,
 				8C74D81027DB44AC0033BF04 /* Sources */,
 				8C74D86827DB96A70033BF04 /* Run SwiftLint */,
 				8C74D81127DB44AC0033BF04 /* Frameworks */,
@@ -505,6 +506,16 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		64DEEDFC046E72A856C18DA2 /* [CP-User] Run Flutter Build fintech_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build fintech_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/fintech_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		6FC909AD6AEC63DA2428FBE6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
