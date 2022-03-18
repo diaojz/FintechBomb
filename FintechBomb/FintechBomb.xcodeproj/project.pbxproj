@@ -42,6 +42,7 @@
 		8C74D85E27DB45D40033BF04 /* AppStoreProjectConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8C74D85327DB45D40033BF04 /* AppStoreProjectConfig.xcconfig */; };
 		8C74D85F27DB45D40033BF04 /* BaseProjectConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8C74D85427DB45D40033BF04 /* BaseProjectConfig.xcconfig */; };
 		8C74D86027DB45D40033BF04 /* UATProjectConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8C74D85527DB45D40033BF04 /* UATProjectConfig.xcconfig */; };
+		8CFC1F5A27E4856B00BDA0D0 /* EEPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC1F5927E4856B00BDA0D0 /* EEPerson.m */; };
 		FB0D9850BF472AA7C4A82B20 /* Pods_FintechBombTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727731C790AE21E9A9E81F72 /* Pods_FintechBombTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,8 @@
 		8C74D85327DB45D40033BF04 /* AppStoreProjectConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppStoreProjectConfig.xcconfig; sourceTree = "<group>"; };
 		8C74D85427DB45D40033BF04 /* BaseProjectConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BaseProjectConfig.xcconfig; sourceTree = "<group>"; };
 		8C74D85527DB45D40033BF04 /* UATProjectConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UATProjectConfig.xcconfig; sourceTree = "<group>"; };
+		8CFC1F5827E4856B00BDA0D0 /* EEPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EEPerson.h; sourceTree = "<group>"; };
+		8CFC1F5927E4856B00BDA0D0 /* EEPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EEPerson.m; sourceTree = "<group>"; };
 		BBA41B5D039CC72787C73491 /* Pods-FintechBomb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FintechBomb.debug.xcconfig"; path = "Target Support Files/Pods-FintechBomb/Pods-FintechBomb.debug.xcconfig"; sourceTree = "<group>"; };
 		BF178891CA389A05DB930CE1 /* Pods-FintechBomb.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FintechBomb.uat.xcconfig"; path = "Target Support Files/Pods-FintechBomb/Pods-FintechBomb.uat.xcconfig"; sourceTree = "<group>"; };
 		C978A8B66AD4F5465AE48A90 /* Pods-FintechBombTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FintechBombTests.appstore.xcconfig"; path = "Target Support Files/Pods-FintechBombTests/Pods-FintechBombTests.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 			children = (
 				8C5310FB27DDC85F005F8C44 /* DDPerson.h */,
 				8C5310FC27DDC85F005F8C44 /* DDPerson.m */,
+				8CFC1F5827E4856B00BDA0D0 /* EEPerson.h */,
+				8CFC1F5927E4856B00BDA0D0 /* EEPerson.m */,
 			);
 			path = runtime;
 			sourceTree = "<group>";
@@ -644,6 +649,7 @@
 				8C53111927DF832F005F8C44 /* AppRouting.swift in Sources */,
 				8C53110127DDC90C005F8C44 /* DDTestViewController.m in Sources */,
 				8C53110C27DF6114005F8C44 /* Functions.swift in Sources */,
+				8CFC1F5A27E4856B00BDA0D0 /* EEPerson.m in Sources */,
 				8C53110727DE52A3005F8C44 /* BuildTargetToggle.swift in Sources */,
 				8C53110927DE5479005F8C44 /* DDLocalToggleDataStore.swift in Sources */,
 				8C53111327DF631A005F8C44 /* UniversalLinks.swift in Sources */,

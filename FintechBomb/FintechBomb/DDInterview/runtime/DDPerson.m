@@ -11,6 +11,8 @@
 
 - (void)printMethods {
     NSLog(@"person's name is %@", self.name);
+    
+    NSLog(@"DDPerson: test different Class's sel is same one: %p", @selector(printMethods));
 }
 
 @end

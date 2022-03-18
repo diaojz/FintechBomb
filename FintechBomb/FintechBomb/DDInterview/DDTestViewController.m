@@ -7,10 +7,13 @@
 
 #import "DDTestViewController.h"
 #import "DDPerson.h"
+#import "EEPerson.h"
 #import "FintechBomb-Bridging-Header.h"
 #import <objc/runtime.h>
 
 @interface DDTestViewController ()
+
+@property (nonatomic, copy) NSString *name;
 
 @end
 
@@ -36,11 +39,25 @@
     NSLog(@"%p", object_getClassName(objClass));
     NSLog(@"%p", object_getClassName(objMata));
     
+//   // 会闪退
+//    NSMutableArray *arr1 = [NSMutableArray array];
+//    [arr1 addObject:nil];
+//
+//    // 这样的不会崩溃, nil会被过滤掉
+//    NSMutableArray *arr2 = [[NSMutableArray alloc] initWithObjects:@"hello", @"world", nil, nil, nil];
+
+    
+//    self.name = @"";
+
     
     
+    DDPerson *dPerson = [[DDPerson alloc] init];
+    NSLog(@"person = %@", dPerson);
+    [dPerson printMethods];
     
-    
-    
+    EEPerson *ePerson = [[EEPerson alloc] init];
+    NSLog(@"ePerson = %@", ePerson);
+    [ePerson printMethods];
     
 }
 
