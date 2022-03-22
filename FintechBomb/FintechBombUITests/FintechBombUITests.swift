@@ -2,12 +2,13 @@
 //  FintechBombUITests.swift
 //  FintechBombUITests
 //
-//  Created by 刁爷 on 2022/3/11.
+//  Created by 刁爷 on 2022/3/22.
 //
 
 import XCTest
 
 class FintechBombUITests: XCTestCase {
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -26,7 +27,6 @@ class FintechBombUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 

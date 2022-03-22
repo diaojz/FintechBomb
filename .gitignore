@@ -319,3 +319,5 @@ xcuserdata
 # Keys
 # 私有key，不能上传
 local.keys
+
+.history

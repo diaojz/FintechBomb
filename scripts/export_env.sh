@@ -4,4 +4,6 @@
 # export the environment variables
 export $(grep -v '^#' ./local.keys | sed 's/#.*//')
 
-export MATCH_GIT_BASIC_AUTHORIZATION=$(echo -n momentsci:$GITHUB_API_TOKEN | base64)
+export MATCH_GIT_BASIC_AUTHORIZATION=$(echo -n diaojiagou:$GITHUB_API_TOKEN | base64)
+
+#export MATCH_PASSWORD=$(echo -n $MATCH_PASSWORD | base64)

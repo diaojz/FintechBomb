@@ -16,13 +16,6 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
-  end
-  
-  
-  
   # Development
     desc "Lint code"
     lane :lint_code do
@@ -83,7 +76,8 @@ platform :ios do
       desc "Download certificates and profiles"
       lane :download_profiles do
         keychain_name = "TemporaryKeychain"
-        keychain_password = "TemporaryKeychainPassword"
+#       keychain_password = "TemporaryKeychainPassword"
+        keychain_password = ENV["MATCH_PASSWORD"]
         
         create_keychain(
           name: keychain_name,
@@ -92,6 +86,17 @@ platform :ios do
           timeout: 3600,
           unlock: true,
         )
+
+match(
+  type: "development",
+  readonly: true,
+  keychain_name: keychain_name,
+  keychain_password: keychain_password,
+  storage_mode: "git",
+  git_url: "git@github.com:diaojz/FintechBomb.git",
+  app_identifier: "com.fantaike.fintechbomb",
+  team_id: "H4VX6CT2V4"
+)
 
         match(
           type: "adhoc",
@@ -111,7 +116,7 @@ platform :ios do
           keychain_password: keychain_password,
           storage_mode: "git",
           git_url: "git@github.com:diaojz/FintechBomb.git",
-          app_identifier: "com.fantaike.fintechbomb",
+          app_identifier: "com.fantaike.fintechbomb.appstore",
           team_id: "H4VX6CT2V4"
         )
       end
@@ -121,6 +126,7 @@ platform :ios do
         api_key = get_app_store_connect_api_key
         keychain_name = "TemporaryKeychain"
         keychain_password = "TemporaryKeychainPassword"
+#       keychain_password = ENV["MATCH_PASSWORD"]
         
         create_keychain(
           name: keychain_name,
@@ -129,6 +135,18 @@ platform :ios do
           timeout: 3600,
           unlock: true,
         )
+
+match(
+  type: "development",
+  readonly: true,
+  keychain_name: keychain_name,
+  keychain_password: keychain_password,
+  storage_mode: "git",
+  git_url: "git@github.com:diaojz/FintechBomb.git",
+  app_identifier: "com.fantaike.fintechbomb",
+  team_id: "H4VX6CT2V4",
+  api_key: api_key
+)
 
         match(
           type: "adhoc",
@@ -147,7 +165,7 @@ platform :ios do
           keychain_password: keychain_password,
           storage_mode: "git",
           git_url: "git@github.com:diaojz/FintechBomb.git",
-          app_identifier: "com.fantaike.fintechbomb",
+          app_identifier: "com.fantaike.fintechbomb.appstore",
           team_id: "H4VX6CT2V4",
           api_key: api_key
         )
@@ -157,7 +175,8 @@ platform :ios do
       lane :nuke_profiles do
         api_key = get_app_store_connect_api_key
         keychain_name = "TemporaryKeychain"
-        keychain_password = "TemporaryKeychainPassword"
+#       keychain_password = "TemporaryKeychainPassword"
+        keychain_password = ENV["MATCH_PASSWORD"]
         
         create_keychain(
           name: keychain_name,
@@ -166,6 +185,18 @@ platform :ios do
           timeout: 3600,
           unlock: true,
         )
+
+match(
+  type: "development",
+  readonly: true,
+  keychain_name: keychain_name,
+  keychain_password: keychain_password,
+  storage_mode: "git",
+  git_url: "git@github.com:diaojz/FintechBomb.git",
+  app_identifier: "com.fantaike.fintechbomb",
+  team_id: "H4VX6CT2V4",
+  api_key: api_key
+)
 
         match_nuke(
           type: "adhoc",
@@ -184,7 +215,7 @@ platform :ios do
           keychain_password: keychain_password,
           storage_mode: "git",
           git_url: "git@github.com:diaojz/FintechBomb.git",
-          app_identifier: "com.fantaike.fintechbomb",
+          app_identifier: "com.fantaike.fintechbomb.appstore",
           team_id: "H4VX6CT2V4",
           api_key: api_key
         )
@@ -210,7 +241,7 @@ platform :ios do
           force: true,
           storage_mode: "git",
           git_url: "git@github.com:diaojz/FintechBomb.git",
-          app_identifier: "com.fantaike.fintechbomb.uat",
+          app_identifier: "com.fantaike.fintechbomb",
           team_id: "H4VX6CT2V4",
           api_key: api_key
         )
@@ -231,7 +262,7 @@ platform :ios do
           profile_name: "match AdHoc com.fantaike.fintechbomb.uat")
 
         puts("Create an archive for uat testing")
-        gym(scheme: "FintechBomb-uat",
+        gym(scheme: "FintechBomb-UAT",
           workspace: "FintechBomb.xcworkspace",
           export_method: "ad-hoc",
           xcargs: "-allowProvisioningUpdates")
@@ -253,8 +284,8 @@ platform :ios do
           use_automatic_signing: false,
           path: "FintechBomb/FintechBomb.xcodeproj",
           code_sign_identity: "iPhone Distribution",
-          bundle_identifier: "com.fantaike.fintechbomb",
-          profile_name: "match AppStore com.fantaike.fintechbomb")
+          bundle_identifier: "com.fantaike.fintechbomb.appstore",
+          profile_name: "match AppStore com.fantaike.fintechbomb.appstore")
 
         puts("Create an archive for AppStore submission")
         gym(scheme: "FintechBomb-AppStore",
@@ -305,7 +336,7 @@ platform :ios do
         api_key = get_app_store_connect_api_key
         upload_to_app_store(
           api_key: api_key,
-          app_identifier: "com.fantaike.fintechbomb",
+          app_identifier: "com.fantaike.fintechbomb.appstore",
           skip_metadata: true,
           skip_screenshots: true,
           precheck_include_in_app_purchases: false,

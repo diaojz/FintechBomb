@@ -2,12 +2,13 @@
 //  FintechBombUITestsLaunchTests.swift
 //  FintechBombUITests
 //
-//  Created by 刁爷 on 2022/3/11.
+//  Created by 刁爷 on 2022/3/22.
 //
 
 import XCTest
 
 class FintechBombUITestsLaunchTests: XCTestCase {
+
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

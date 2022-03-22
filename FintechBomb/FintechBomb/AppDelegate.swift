@@ -2,13 +2,16 @@
 //  AppDelegate.swift
 //  FintechBomb
 //
-//  Created by 刁爷 on 2022/3/11.
+//  Created by 刁爷 on 2022/3/22.
 //
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -27,18 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+
+
 }
 
-extension UIWindow {
-    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        let toggleDataStore: ToggleDataStoreType = BuildTargetToggleDataStore.shared
-        if toggleDataStore.isToggleOn(BuildTargetToggle.debug) ||
-            toggleDataStore.isToggleOn(BuildTargetToggle.uat) {
-            if motion == .motionShake { // 摇晃手机
-                let testVC = DDTestViewController()
-//                navigationController?.pushViewController(testVC, animated: true)
-                print("进入debug页面..")
-            }
-        }
-    }
-}
