@@ -4,7 +4,7 @@
 source 'https://cdn.cocoapods.org/'
 
 workspace './FintechBomb.xcworkspace'
-project './FintechBomb.xcodeproj'
+project './FintechBomb/FintechBomb.xcodeproj'
 
 platform :ios, '13.0'
 use_frameworks!
@@ -13,8 +13,11 @@ use_frameworks!
 inhibit_all_warnings!
 
 # integration flutter
-# flutter_application_path = '../fintech_flutter'
+#  flutter_application_path = '../fintech_flutter'
+#  load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+#  flutter_application_path = '../my_flutter'
 # load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
 
 
 
@@ -46,6 +49,8 @@ end
 def internal_pods
   pod 'DesignKit', :path => './Frameworks/DesignKit', :inhibit_warnings => false
 #  pod 'DDKit', :path => './Frameworks/DDKit', :inhibit_warnings => false
+  pod 'Flutter', :podspec => './fintech_flutter/fintech_flutter/Debug/Flutter.podspec'
+
 end
 
 def test_pods
@@ -60,7 +65,9 @@ target 'FintechBomb' do
 #  use_frameworks!
 
 # flutter
-# install_all_flutter_pods(flutter_application_path)
+  # install_all_flutter_pods(flutter_application_path)
+
+
 
   # Pods for FintechBomb
   dev_pods
