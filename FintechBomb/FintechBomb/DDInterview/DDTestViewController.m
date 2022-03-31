@@ -24,9 +24,6 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.whiteColor;
     
-    
-    
-    
 //    NSString *test = @"abc...";
 //
 //    id cls = [DDPerson class];
@@ -65,17 +62,22 @@
     
     // 测试 copy and strong
     [ePerson testCopyAndStringString];
-    [ePerson testMutableStringCopy];  
+    [ePerson testMutableStringCopy];
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"点我啊" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(100, 200, 100, 50);
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)buttonClicked:(UIButton *)btn {
+    NSString *nilStr = nil;
+    NSArray *array = @[@"nilhaha", nilStr, @"hahaha"];
+    NSLog(@"array: %@", array);
 }
-*/
 
 @end
+

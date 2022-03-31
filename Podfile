@@ -30,6 +30,8 @@ def core_pods
   pod 'RxSwift', '= 5.1.1'
   pod 'RxRelay', '= 5.1.1'
   pod 'Alamofire', '= 5.3.0'
+  pod "CTMediator"
+  pod 'AvoidCrash', '~> 2.5.2'
 end
 
 def thirdparty_pods

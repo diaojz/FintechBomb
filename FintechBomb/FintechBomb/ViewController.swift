@@ -41,6 +41,13 @@ class ViewController: UIViewController {
         flutterButton.addTarget(self, action: #selector(flutterButtonClicked), for: .touchUpInside)
         view.addSubview(flutterButton)
 
+        let debugButton = UIButton(frame: CGRect(x: 20, y: 700, width: 200, height: 40))
+        debugButton.tintColor = UIColor.designKit.primary
+        debugButton.backgroundColor = UIColor.orange
+        debugButton.setTitle("进入debug的VC", for: .normal)
+        debugButton.addTarget(self, action: #selector(debugButtonClicked), for: .touchUpInside)
+        view.addSubview(debugButton)
+
     }
 
     @objc func testButtonClicked() {
@@ -57,5 +64,28 @@ class ViewController: UIViewController {
         
         let flutterVC = FlutterViewController(project: nil, nibName: nil, bundle: nil);
         present(flutterVC, animated: true, completion: nil);
+    }
+    
+    @objc func debugButtonClicked() {
+//        let debugVC = DebugMenuViewController()
+//        present(debugVC, animated: true, completion: nil)
+        
+//        testPrint()
+        
+        
+    }
+    
+    func testPrint() {
+//        print(
+//            [("b", "a"),
+//             ("3", "2"),
+//             ("1", "0")]
+//                .sorted{ $0.0 < $1.0 } // 1
+//                .compactMap { Int($0.1) } // 2
+//                .dropLast() // 3
+//                .reduce(10, /) // 4
+//        )
+        
+        print([("b", "a"), ("3", "2"), ("1", "0")].sorted{ $0.0 < $1.0})
     }
 }

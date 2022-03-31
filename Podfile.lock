@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.3.0)
+  - AvoidCrash (2.5.2)
+  - CTMediator (46)
   - DesignKit (1.0.0)
   - Differentiator (4.0.1)
   - Flutter (2.10.300)
@@ -28,6 +30,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 5.3.0)
+  - AvoidCrash (~> 2.5.2)
+  - CTMediator
   - DesignKit (from `./Frameworks/DesignKit`)
   - Flutter (from `./fintech_flutter/fintech_flutter/Debug/Flutter.podspec`)
   - Kingfisher (= 5.15.6)
@@ -46,6 +50,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AvoidCrash
+    - CTMediator
     - Differentiator
     - Kingfisher
     - Nimble
@@ -68,6 +74,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
+  AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
+  CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   DesignKit: ad94b2d421cd94bdbb64b801ad0b9068592f77d2
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Flutter: c0e796afd53732a747270ce691b0b9965aeee321
@@ -84,6 +92,6 @@ SPEC CHECKSUMS:
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: d4c2a140108c9bc9be93e132e3b8cf520c1fce07
+PODFILE CHECKSUM: 155a0834278d4fb802319c36b30c904ceeabc914
 
 COCOAPODS: 1.10.0

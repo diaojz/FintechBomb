@@ -31,6 +31,8 @@
 		8C78E75C27E9BED5004BE52B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78E74627E9BED5004BE52B /* ViewController.swift */; };
 		8C78E75D27E9BED5004BE52B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78E74727E9BED5004BE52B /* AppDelegate.swift */; };
 		8C78E75E27E9BED5004BE52B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C78E74827E9BED5004BE52B /* Assets.xcassets */; };
+		8C78E76027EA257F004BE52B /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78E75F27EA257F004BE52B /* DebugMenuViewController.swift */; };
+		8C78E76327EA29ED004BE52B /* DDTestViewController+mediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C78E76227EA29ED004BE52B /* DDTestViewController+mediator.m */; };
 		8CCB008027E9B2E500114E9B /* FintechBombTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB007F27E9B2E500114E9B /* FintechBombTests.swift */; };
 		8CCB008A27E9B2E500114E9B /* FintechBombUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB008927E9B2E500114E9B /* FintechBombUITests.swift */; };
 		8CCB008C27E9B2E500114E9B /* FintechBombUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB008B27E9B2E500114E9B /* FintechBombUITestsLaunchTests.swift */; };
@@ -83,6 +85,9 @@
 		8C78E74627E9BED5004BE52B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C78E74727E9BED5004BE52B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C78E74827E9BED5004BE52B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C78E75F27EA257F004BE52B /* DebugMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
+		8C78E76127EA29ED004BE52B /* DDTestViewController+mediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DDTestViewController+mediator.h"; sourceTree = "<group>"; };
+		8C78E76227EA29ED004BE52B /* DDTestViewController+mediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DDTestViewController+mediator.m"; sourceTree = "<group>"; };
 		8CCB006527E9B2E300114E9B /* FintechBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FintechBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCB007B27E9B2E500114E9B /* FintechBombTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FintechBombTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCB007F27E9B2E500114E9B /* FintechBombTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FintechBombTests.swift; sourceTree = "<group>"; };
@@ -174,6 +179,8 @@
 				8C78E73727E9BED4004BE52B /* runtime */,
 				8C78E73E27E9BED4004BE52B /* DDTestViewController.h */,
 				8C78E73F27E9BED4004BE52B /* DDTestViewController.m */,
+				8C78E76127EA29ED004BE52B /* DDTestViewController+mediator.h */,
+				8C78E76227EA29ED004BE52B /* DDTestViewController+mediator.m */,
 			);
 			path = DDInterview;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 		8C78E74027E9BED5004BE52B /* DDDebugMenu */ = {
 			isa = PBXGroup;
 			children = (
+				8C78E75F27EA257F004BE52B /* DebugMenuViewController.swift */,
 			);
 			path = DDDebugMenu;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C78E74927E9BED5004BE52B /* BuildTargetToggle.swift in Sources */,
+				8C78E76027EA257F004BE52B /* DebugMenuViewController.swift in Sources */,
 				8C78E75127E9BED5004BE52B /* TransitionType.swift in Sources */,
 				8C78E74D27E9BED5004BE52B /* Configuration.swift in Sources */,
 				8C78E75327E9BED5004BE52B /* AppRouting.swift in Sources */,
@@ -557,6 +566,7 @@
 				8C78E75C27E9BED5004BE52B /* ViewController.swift in Sources */,
 				8C78E74F27E9BED5004BE52B /* Navigating.swift in Sources */,
 				8C78E74B27E9BED5004BE52B /* DDLocalToggleDataStore.swift in Sources */,
+				8C78E76327EA29ED004BE52B /* DDTestViewController+mediator.m in Sources */,
 				8C78E75D27E9BED5004BE52B /* AppDelegate.swift in Sources */,
 				8C78E75627E9BED5004BE52B /* FFPerson.m in Sources */,
 				8C78E75227E9BED5004BE52B /* UniversalLinks.swift in Sources */,
@@ -652,6 +662,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -712,6 +723,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -753,8 +765,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FintechBomb/FintechBomb-Bridging-Header.h";
@@ -785,8 +797,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.FintechBomb;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantaike.fintechbomb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FintechBomb/FintechBomb-Bridging-Header.h";
